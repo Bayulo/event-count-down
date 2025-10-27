@@ -1,0 +1,74 @@
+body{
+    margin: 0;
+    background-color: rgb(255, 222, 255);
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background: linear-gradient(95deg, rgb(134, 0, 134), rgb(210, 0, 210));
+    /* background: linear-gradient(45deg, red, blue); */
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: xx-large;
+}
+.up_arrow{
+    background-color: purple;
+    border-radius: 50%;
+    position: fixed;
+    left: 95%;
+    top: 85%;
+}
+.category_wrappers{
+    background-color: white;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 10px;
+}
+.category_title{
+    width: fit-content;
+    border: solid;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(153, 0, 153);
+    font-size: larger;
+}
+.event_wrapper{
+    border: 1.5px solid purple;
+    padding: 30px;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px;
+}
+.event_title{
+    font-size: large;
+}
+.event_details{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 2rem;
+}
+.event_details i{
+    color: purple;
+    margin-left: auto;
+}
+.event_details i:hover{
+    color: rgb(182, 0, 182);
+    transform: scale(1.1);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.event_wrapper img{
+    border-radius: 5px;
+}
+.vertical_line{
+    border: 1.5px solid purple;
+    height: 120px;
+}
+footer{
+    background-color: purple;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
