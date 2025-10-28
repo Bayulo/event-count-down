@@ -14,7 +14,6 @@ const cultural_events_end_dates = [
 ];
 
 //set the count downs for cultural events
-
 function update_countdown(){
     const today = new Date();
     const countdown = document.querySelectorAll(".cultural_countdown");
@@ -52,32 +51,48 @@ event_dates.forEach((item, index) => {
 
 //sporting events
 const sporting_events_start_dates = [
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(), 
-    new Date(), new Date(), new Date(), new Date(), new Date()
+    new Date(2026, 3, 20), new Date(2026, 5, 28), new Date(2026, 5, 29), new Date(2026, 4, 30), new Date(2026, 2, 15),
+    new Date(2026, 1, 8), new Date(2026, 3, 18), new Date(2026, 2, 1), new Date(2026, 7, 20), new Date(2026, 4, 24),
+    new Date(2026, 0, 12), new Date(2026, 3, 26), new Date(2026, 6, 2), new Date(2026, 1, 5), new Date(2026, 4, 24), 
+    new Date(2026, 4, 24), new Date(2026, 3, 18), new Date(2026, 5, 14), new Date(2026,), new Date(2026,)
 ];
 const sporting_events_end_dates = [
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(), 
-    new Date(), new Date(), new Date(), new Date(), new Date()
+    new Date(2026, 3, 21), new Date(2026, 6, 28), new Date(2026, 6, 12), new Date(2026, 4, 31), new Date(2026, 4, 31),
+    new Date(2026, 1, 9), new Date(2026, 5, 15), new Date(2026, 2, 2), new Date(2026, 8, 13), new Date(2026, 5, 7),
+    new Date(2026, 1, 11), new Date(2026, 3, 27), new Date(2026, 6, 6), new Date(2026, 2, 15), new Date(2026, 4, 25), 
+    new Date(2026, 4, 25), new Date(2026, 3, 20), new Date(2026, 5, 15), new Date(2026,), new Date(2026,)
 ];
+
+
+//feed the start dates at their positions for sporting events
+let sporting_date = document.querySelectorAll(".sporting_date");
+sporting_date.forEach((item, index) => {
+    item.textContent = sporting_events_start_dates[index].toDateString();
+})
+
 
 
 //arts events
 const arts_events_start_dates = [
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(), 
-    new Date(), new Date(), new Date(), new Date(), new Date()
+    new Date(2026, 4, 12), new Date(2026,), new Date(2026, 7, 30), new Date(2026, 1, 12), new Date(2026, 2, 12),
+    new Date(2026, 4, 4), new Date(2026, 5, 19), new Date(2026, 7), new Date(2026, 3, 10), new Date(2026, 4, 9),
+    new Date(2026, 8, 10), new Date(2026, 1, 12), new Date(2026, 8, 17), new Date(2026, 0, 22), new Date(2026, 2, 25), 
+    new Date(2026, 8, 6), new Date(2026, 5, 3), new Date(2026, 6, 3), new Date(2026, 8, 19), new Date(2026, 4, 25)
 ];
 const arts_events_end_dates = [
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(), 
-    new Date(), new Date(), new Date(), new Date(), new Date()
+    new Date(2026, 4, 24), new Date(2026,), new Date(2026, 8, 8), new Date(2026, 1, 23), new Date(2026, 2, 19),
+    new Date(2026, 4, 5), new Date(2026, 5, 20), new Date(2026, 7), new Date(2026, 3, 20), new Date(2026, 10, 23),
+    new Date(2026, 8, 21), new Date(2026, 1, 20), new Date(2026, 8, 21), new Date(2026, 1, 2), new Date(2026, 3, 20), 
+    new Date(2026, 8, 7), new Date(2026, 3, 15), new Date(2026, 6, 6), new Date(2026, 9, 5), new Date(2026, 5, 5)
 ];
+
+
+//feed the start dates at their positions for sporting events
+let art_dates = document.querySelectorAll(".art_dates");
+art_dates.forEach((item, index) => {
+    item.textContent = arts_events_start_dates[index].toDateString();
+})
+
 
 
 //trade events
