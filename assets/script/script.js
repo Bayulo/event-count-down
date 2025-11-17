@@ -14,7 +14,7 @@ const cultural_events_end_dates = [
 ];
 
 //set the count downs for cultural events
-function update_countdown(){
+function update_countdown_1(){
     const today = new Date();
     const countdown = document.querySelectorAll(".cultural_countdown");
     countdown.forEach((item, index) => {
@@ -39,8 +39,8 @@ function update_countdown(){
         }
     });
 }
-setInterval(update_countdown, 1000);
-update_countdown();
+setInterval(update_countdown_1, 1000);
+update_countdown_1();
 
 //feed the start dates at their positions for cultural events
 let event_dates = document.querySelectorAll(".cultural_date");
@@ -62,6 +62,36 @@ const sporting_events_end_dates = [
     new Date(2026, 1, 11), new Date(2026, 3, 27), new Date(2026, 6, 6), new Date(2026, 2, 15), new Date(2026, 4, 25), 
     new Date(2026, 4, 25), new Date(2026, 3, 20), new Date(2026, 5, 15), new Date(2026,), new Date(2026,)
 ];
+
+
+//set the count downs for sporting events
+function update_countdown_2(){
+    const today = new Date();
+    let sporting_countdown = document.querySelectorAll(".sporting_countdown");
+    sporting_countdown.forEach((item, index) => {
+        let a = sporting_events_start_dates[index] - today;
+        if (a <= 0 && sporting_events_end_dates[index] - today > 0) {
+            item.innerHTML = `<span style = "color: green;">Event is Ongoing!</span>`;
+            return;
+        }
+        let seconds_left = Math.floor(a/1000);
+        let minutes_left = Math.floor(seconds_left/60);
+        let hours_left = Math.floor(minutes_left/60);
+        let days_left = Math.floor(hours_left/24);
+        let months_left = Math.floor(days_left/30);
+
+        let display_seconds_left = seconds_left % 60;
+        let display_minutes_left = minutes_left % 60;
+        let display_hours_left = hours_left % 60;
+        let display_days_left = days_left % 30;
+        item.innerHTML = `${months_left} month(s), ${display_days_left} days, ${display_hours_left} hours, ${display_minutes_left} minutes, ${display_seconds_left} seconds left`;
+        if(sporting_events_end_dates[index] - today < 0){
+            item.innerHTML = `<span style = "color: red;">Event has passed</span>`
+        }
+    });
+}
+setInterval(update_countdown_2, 1000);
+update_countdown_2();
 
 
 //feed the start dates at their positions for sporting events
@@ -87,11 +117,41 @@ const arts_events_end_dates = [
 ];
 
 
+//set the count downs for arts events
+function update_countdown_3(){
+    const today = new Date();
+    let art_countdown = document.querySelectorAll(".art_countdown");
+    art_countdown.forEach((item, index) => {
+        let a = arts_events_start_dates[index] - today;
+        if (a <= 0 && arts_events_end_dates[index] - today > 0) {
+            item.innerHTML = `<span style = "color: green;">Event is Ongoing!</span>`;
+            return;
+        }
+        let seconds_left = Math.floor(a/1000);
+        let minutes_left = Math.floor(seconds_left/60);
+        let hours_left = Math.floor(minutes_left/60);
+        let days_left = Math.floor(hours_left/24);
+        let months_left = Math.floor(days_left/30);
+
+        let display_seconds_left = seconds_left % 60;
+        let display_minutes_left = minutes_left % 60;
+        let display_hours_left = hours_left % 60;
+        let display_days_left = days_left % 30;
+        item.innerHTML = `${months_left} month(s), ${display_days_left} days, ${display_hours_left} hours, ${display_minutes_left} minutes, ${display_seconds_left} seconds left`;
+        if(arts_events_end_dates[index] - today < 0){
+            item.innerHTML = `<span style = "color: red;">Event has passed</span>`
+        }
+    });
+}
+setInterval(update_countdown_3, 1000);
+update_countdown_3();
+
 //feed the start dates at their positions for sporting events
 let art_dates = document.querySelectorAll(".art_dates");
 art_dates.forEach((item, index) => {
     item.textContent = arts_events_start_dates[index].toDateString();
 })
+
 
 
 
@@ -108,6 +168,37 @@ const trade_events_end_dates = [
     new Date(2026, 2, 13), new Date(2026, 10, 30), new Date(2026, 8, 13), new Date(2026, 10), new Date(2026, 5, 19), 
     new Date(2026, ), new Date(2026, 5, 19), new Date(2026, 3, 25), new Date(2026, 4, 2), new Date(2026, 8)
 ];
+
+
+//set the count downs for trade events
+function update_countdown_4(){
+    const today = new Date();
+    let trade_countdown = document.querySelectorAll(".trade_countdown");
+    trade_countdown.forEach((item, index) => {
+        let a = trade_events_start_dates[index] - today;
+        if (a <= 0 && trade_events_end_dates[index] - today > 0) {
+            item.innerHTML = `<span style = "color: green;">Event is Ongoing!</span>`;
+            return;
+        }
+        let seconds_left = Math.floor(a/1000);
+        let minutes_left = Math.floor(seconds_left/60);
+        let hours_left = Math.floor(minutes_left/60);
+        let days_left = Math.floor(hours_left/24);
+        let months_left = Math.floor(days_left/30);
+
+        let display_seconds_left = seconds_left % 60;
+        let display_minutes_left = minutes_left % 60;
+        let display_hours_left = hours_left % 60;
+        let display_days_left = days_left % 30;
+        item.innerHTML = `${months_left} month(s), ${display_days_left} days, ${display_hours_left} hours, ${display_minutes_left} minutes, ${display_seconds_left} seconds left`;
+        if(trade_events_end_dates[index] - today < 0){
+            item.innerHTML = `<span style = "color: red;">Event has passed</span>`
+        }
+    });
+}
+setInterval(update_countdown_4, 1000);
+update_countdown_4();
+
 
 //feed the start dates at their positions for sporting events
 let trade_dates = document.querySelectorAll(".trade_date");
@@ -131,6 +222,37 @@ const awareness_events_end_dates = [
     new Date(2026, 11, 10), new Date(2026, 8, 21), new Date(2026, 11, 1), new Date(2026, 9, 6)
 ];
 
+
+//set the count downs for awareness events
+function update_countdown_5(){
+    const today = new Date();
+    let awareness_countdown = document.querySelectorAll(".awareness_countdown");
+    awareness_countdown.forEach((item, index) => {
+        let a = awareness_events_start_dates[index] - today;
+        if (a <= 0 && awareness_events_end_dates[index] - today > 0) {
+            item.innerHTML = `<span style = "color: green;">Event is Ongoing!</span>`;
+            return;
+        }
+        let seconds_left = Math.floor(a/1000);
+        let minutes_left = Math.floor(seconds_left/60);
+        let hours_left = Math.floor(minutes_left/60);
+        let days_left = Math.floor(hours_left/24);
+        let months_left = Math.floor(days_left/30);
+
+        let display_seconds_left = seconds_left % 60;
+        let display_minutes_left = minutes_left % 60;
+        let display_hours_left = hours_left % 60;
+        let display_days_left = days_left % 30;
+        item.innerHTML = `${months_left} month(s), ${display_days_left} days, ${display_hours_left} hours, ${display_minutes_left} minutes, ${display_seconds_left} seconds left`;
+        if(awareness_events_end_dates[index] - today < 0){
+            item.innerHTML = `<span style = "color: red;">Event has passed</span>`
+        }
+    });
+}
+setInterval(update_countdown_5, 1000);
+update_countdown_5();
+
+
 //feed the start dates at their positions for awareness events
 let awareness_dates = document.querySelectorAll(".awareness_date");
 awareness_dates.forEach((item, index) => {
@@ -150,6 +272,37 @@ const holiday_linked_events_end_dates = [
     new Date(2026, 4, 2), new Date(2026, 10, 28), new Date(2026, 10, 6), new Date(2026, ), new Date(2026, 11, 7), 
     new Date(2026, 5, 25), new Date(2026, ), new Date(2026, 10, 27), new Date(2026, 9, 13), new Date(2026, 10, 12)
 ];
+
+
+//set the count downs for holiday-lined events
+function update_countdown_6(){
+    const today = new Date();
+    let holiday_linked_countdown = document.querySelectorAll(".holiday_linked_countdown");
+    holiday_linked_countdown.forEach((item, index) => {
+        let a = holiday_linked_events_start_dates[index] - today;
+        if (a <= 0 && holiday_linked_events_end_dates[index] - today > 0) {
+            item.innerHTML = `<span style = "color: green;">Event is Ongoing!</span>`;
+            return;
+        }
+        let seconds_left = Math.floor(a/1000);
+        let minutes_left = Math.floor(seconds_left/60);
+        let hours_left = Math.floor(minutes_left/60);
+        let days_left = Math.floor(hours_left/24);
+        let months_left = Math.floor(days_left/30);
+
+        let display_seconds_left = seconds_left % 60;
+        let display_minutes_left = minutes_left % 60;
+        let display_hours_left = hours_left % 60;
+        let display_days_left = days_left % 30;
+        item.innerHTML = `${months_left} month(s), ${display_days_left} days, ${display_hours_left} hours, ${display_minutes_left} minutes, ${display_seconds_left} seconds left`;
+        if(holiday_linked_events_end_dates[index] - today < 0){
+            item.innerHTML = `<span style = "color: red;">Event has passed</span>`
+        }
+    });
+}
+setInterval(update_countdown_6, 1000);
+update_countdown_6();
+
 
 //feed the start dates at their positions for awareness events
 let holiday_dates = document.querySelectorAll(".holiday_date");
