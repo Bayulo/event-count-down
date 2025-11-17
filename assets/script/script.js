@@ -325,15 +325,17 @@ holiday_dates.forEach((item, index) => {
 })
 
 
-let cultural_pops = document.querySelector(".cultural_pops");
-cultural_pops.addEventListener("click", test);
+let cultural_pops = document.querySelectorAll(".cultural_pops");
+cultural_pops.forEach(element => {
+    element.addEventListener("click", test);
+});
 
 function test(e){
-    let step = 0;
-    for(step = 0; step < 21; step++){
+    for(let step = 0; step <= 20; step++){
         if(e.target.classList.contains("cultural_pops") && e.target.classList.contains(`${step}`)){
-            console.log("clicked");
+            console.log("clicked, step:", step);
             show_popup(cultural_events_titles[step], cultural_events_dets[step]);
+            break;
         }
     }
 }
