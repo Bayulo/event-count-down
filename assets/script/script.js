@@ -76,6 +76,8 @@ const sporting_events_end_dates = [
     new Date(2026, 1, 11), new Date(2026, 3, 27), new Date(2026, 6, 6), new Date(2026, 2, 15), new Date(2026, 4, 25), 
     new Date(2026, 4, 25), new Date(2026, 3, 20), new Date(2026, 5, 15), new Date(2026,), new Date(2026,)
 ];
+const sporting_events_dets = [];
+const sporting_events_titles = [];
 
 
 //set the count downs for sporting events
@@ -130,6 +132,8 @@ const arts_events_end_dates = [
     new Date(2026, 8, 7), new Date(2026, 3, 15), new Date(2026, 6, 6), new Date(2026, 9, 5), new Date(2026, 5, 5)
 ];
 
+const arts_events_dets = [];
+const arts_events_titles = [];
 
 //set the count downs for arts events
 function update_countdown_3(){
@@ -183,6 +187,8 @@ const trade_events_end_dates = [
     new Date(2026, ), new Date(2026, 5, 19), new Date(2026, 3, 25), new Date(2026, 4, 2), new Date(2026, 8)
 ];
 
+const trade_events_dets = [];
+const trade_events_titles = [];
 
 //set the count downs for trade events
 function update_countdown_4(){
@@ -236,6 +242,8 @@ const awareness_events_end_dates = [
     new Date(2026, 11, 10), new Date(2026, 8, 21), new Date(2026, 11, 1), new Date(2026, 9, 6)
 ];
 
+const awareness_events_dets = [];
+const awareness_events_titles = [];
 
 //set the count downs for awareness events
 function update_countdown_5(){
@@ -287,6 +295,8 @@ const holiday_linked_events_end_dates = [
     new Date(2026, 5, 25), new Date(2026, ), new Date(2026, 10, 27), new Date(2026, 9, 13), new Date(2026, 10, 12)
 ];
 
+const holiday_linked_events_dets = [];
+const holiday_linked_events_titles = [];
 
 //set the count downs for holiday-lined events
 function update_countdown_6(){
@@ -331,14 +341,32 @@ cultural_pops.forEach(element => {
 });
 
 function test(e){
-    for(let step = 0; step <= 20; step++){
-        if(e.target.classList.contains("cultural_pops") && e.target.classList.contains(`${step}`)){
-            console.log("clicked, step:", step);
-            show_popup(cultural_events_titles[step], cultural_events_dets[step]);
-            break;
-        }
+    
+    if (e.target.classList.contains("cultural_pops")) {
+        const step = Number(e.target.dataset.index1);
+        show_popup(cultural_events_titles[step], cultural_events_dets[step]);
     }
-}
+    if (e.target.classList.contains("sporting_pops")) {
+        const step = Number(e.target.dataset.index2);
+        show_popup(sporting_events_titles[step], sporting_events_dets[step]);
+    }
+    if (e.target.classList.contains("arts_pops")) {
+        const step = Number(e.target.dataset.index3);
+        show_popup(arts_events_titles[step], arts_events_dets[step]);
+    }
+    if (e.target.classList.contains("trade_pops")) {
+        const step = Number(e.target.dataset.index4);
+        show_popup(trade_events_titles[step], trade_events_dets[step]);
+    }
+    if (e.target.classList.contains("awareness_pops")) {
+        const step = Number(e.target.dataset.index5);
+        show_popup(awareness_events_titles[step], awareness_events_dets[step]);
+    }
+    if (e.target.classList.contains("holiday_linked_pops")) {
+        const step = Number(e.target.dataset.index);
+        show_popup(holiday_linked_events_titles[step], holiday_linked_events_dets[step]);
+    }
+    }
 
 const dark_background = document.getElementById("dark_background");
 const pop_holder = document.getElementById("pop_holder");
