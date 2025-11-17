@@ -35,6 +35,9 @@ main{
     font-weight: bold;
     padding: 15px;
 }
+.pop_content{
+    line-height: 30px;
+}
 header{
     background: linear-gradient(95deg, rgb(134, 0, 134), rgb(210, 0, 210));
     /* background: linear-gradient(45deg, red, blue); */
