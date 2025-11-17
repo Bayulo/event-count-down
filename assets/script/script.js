@@ -97,44 +97,62 @@ art_dates.forEach((item, index) => {
 
 //trade events
 const trade_events_start_dates = [
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(), 
-    new Date(), new Date(), new Date(), new Date(), new Date()
+    new Date(2026, 0, 8), new Date(2026, 2, 2), new Date(2026, 3), new Date(2026, 10, 2), new Date(2026, 0, 20),
+    new Date(2026, 9, 14), new Date(2026, 8, 4), new Date(2026, 5, 22), new Date(2026, 2, 10), new Date(2026, 5, 22),
+    new Date(2026, 2, 10), new Date(2026, 10), new Date(2026, 8, 10), new Date(2026, 10), new Date(2026, 8), 
+    new Date(2026, ), new Date(2026, 5, 15), new Date(2026, 3, 22), new Date(2026, 3, 27), new Date(2026, 6, 15)
 ];
 const trade_events_end_dates = [
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(), 
-    new Date(), new Date(), new Date(), new Date(), new Date()
+    new Date(2026, 0, 12), new Date(2026, 2, 6), new Date(2026, 3, 30), new Date(2026, 10, 6), new Date(2026, 0, 24),
+    new Date(2026, 9, 19), new Date(2026, 8, 10), new Date(2026, 5, 27), new Date(2026, 2, 13), new Date(2026, 5, 27),
+    new Date(2026, 2, 13), new Date(2026, 10, 30), new Date(2026, 8, 13), new Date(2026, 10), new Date(2026, 5, 19), 
+    new Date(2026, ), new Date(2026, 5, 19), new Date(2026, 3, 25), new Date(2026, 4, 2), new Date(2026, 8)
 ];
+
+//feed the start dates at their positions for sporting events
+let trade_dates = document.querySelectorAll(".trade_date");
+trade_dates.forEach((item, index) => {
+    item.textContent = trade_events_start_dates[index].toDateString();
+})
+
 
 
 //awareness events
 const awareness_events_start_dates = [
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(), 
-    new Date(), new Date(), new Date(), new Date(), new Date()
+    new Date(2026, 11, 1), new Date(2026, 2, 8), new Date(2026, 3, 22), new Date(2026, 9, 10), new Date(2026, 2, 13),
+    new Date(2026, 1, 4), new Date(2026, 8, 5), new Date(2026, 11, 1), new Date(2026, ), new Date(2026, ), new Date(2026, 11, 3),
+    new Date(2026, 5, 20), new Date(2026, 1, 6), new Date(2026, 5, 5), new Date(2026, 5, 14), new Date(2026, 9, 10), 
+    new Date(2026, 11, 9), new Date(2026, 8, 21), new Date(2026, 10, 1), new Date(2026, 9, 5)
 ];
 const awareness_events_end_dates = [
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(), 
-    new Date(), new Date(), new Date(), new Date(), new Date()
+    new Date(2026, 11, 2), new Date(2026, 2, 9), new Date(2026, 3, 23), new Date(2026, 9, 11), new Date(2026, 2, 14),
+    new Date(2026, 1, 5), new Date(2026, 8, 6), new Date(2026, 11, 2), new Date(2026, ), new Date(2026, ), new Date(2026, 11, 4),
+    new Date(2026, 5, 21), new Date(2026, 1, 7), new Date(2026, 5, 6), new Date(2026, 5, 15), new Date(2026, 9, 11), 
+    new Date(2026, 11, 10), new Date(2026, 8, 21), new Date(2026, 11, 1), new Date(2026, 9, 6)
 ];
 
+//feed the start dates at their positions for awareness events
+let awareness_dates = document.querySelectorAll(".awareness_date");
+awareness_dates.forEach((item, index) => {
+    item.textContent = awareness_events_start_dates[index].toDateString();
+})
 
 //holiday linked events
 const holiday_linked_events_start_dates = [
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(), 
-    new Date(), new Date(), new Date(), new Date(), new Date()
+    new Date(2026, 0, 1), new Date(2026, 1, 14), new Date(2026, 3, 5), new Date(2026, 9, 31), new Date(2026, 11, 25),
+    new Date(2026, 5, 21), new Date(2026, 11, 21), new Date(2026, 1, 17), new Date(2026, 11, 26),
+    new Date(2026, 4, 1), new Date(2026, 10, 27), new Date(2026, 10, 5), new Date(2026, ), new Date(2026, 11, 5), 
+    new Date(2026, 5, 24), new Date(2026, ), new Date(2026, 10, 26), new Date(2026, 9, 12), new Date(2026, 10, 11)
 ];
 const holiday_linked_events_end_dates = [
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(),
-    new Date(), new Date(), new Date(), new Date(), new Date(), 
-    new Date(), new Date(), new Date(), new Date(), new Date()
+    new Date(2026, 0, 2), new Date(2026, 1, 15), new Date(2026, 3, 6), new Date(2026, 10, 1), new Date(2026, 11, 26),
+    new Date(2026, 5, 22), new Date(2026, 11, 22), new Date(2026, 1, 18), new Date(2026, 11, 27),
+    new Date(2026, 4, 2), new Date(2026, 10, 28), new Date(2026, 10, 6), new Date(2026, ), new Date(2026, 11, 7), 
+    new Date(2026, 5, 25), new Date(2026, ), new Date(2026, 10, 27), new Date(2026, 9, 13), new Date(2026, 10, 12)
 ];
+
+//feed the start dates at their positions for awareness events
+let holiday_dates = document.querySelectorAll(".holiday_date");
+holiday_dates.forEach((item, index) => {
+    item.textContent = holiday_linked_events_start_dates[index].toDateString();
+})
