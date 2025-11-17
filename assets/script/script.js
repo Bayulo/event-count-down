@@ -12,6 +12,20 @@ const cultural_events_end_dates = [
     new Date(2026, 8, 13), new Date(2026, 8, 26), new Date(2026, 7, 16), new Date(2025, 10, 2), new Date(2026, 5, 25), 
     new Date(2026, 2, 18), new Date(2026, 1, 2), new Date(2026, 2, 29), new Date(2026, 2, 4), new Date(2026, 1, 18)
 ];
+const cultural_events_titles = [
+    "Chinese Lunar Year",
+    "Holi - Festival of Colours",
+    "Diwali (Festival of Lights)",
+    "Nowruz (Persian New Year)",
+    "Eid al-Fitr",
+];
+const cultural_events_dets = [
+    "This is a lunisolar new year celebrated by Chinese communities globally. It signifies a new beginning and is a time for family reunions, fireworks, and parades. A traditional meal includes dishes representing good luck and prosperity, such as fish (for abundance) and dumplings (for wealth). It occurs in the winter, between January 21 and February 20. The event is a cultural and religious celebration rooted in Chinese traditions.",
+    "A Hindu spring festival, Holi signifies the triumph of good over evil. It is observed with music, bonfires, and the throwing of colored powders. The festival is celebrated in India, Nepal, and by the Hindu diaspora. Traditional foods include sweet treats like 'gujiya' and 'malpua', as well as savory snacks. The festival marks the end of winter and the arrival of spring.",
+    "A major Hindu festival, Diwali signifies the victory of light over darkness and good over evil. It is celebrated with the lighting of lamps ('diyas') and fireworks. In some regions, it commemorates the return of Lord Rama to Ayodhya after his exile. Sweets and fried snacks are a significant part of the celebration. It takes place in the autumn, typically between October and November.",
+    "This is a new year celebration that marks the spring equinox. It is a time for renewal and rebirth. The celebration involves setting up a 'Haft-Seen' table with seven symbolic items. It is observed primarily in Iran, Central Asia, and parts of the Caucasus. It is a cultural celebration with Zoroastrian origins.",
+    "This global observance for Muslims marks the end of Ramadan, the month of fasting. It signifies a time of gratitude and charity. The three-day festival includes communal prayers, feasts, and the giving of gifts. Dishes vary by region but often include a variety of sweet foods. It is observed in Muslim-majority countries around the world.",
+];
 
 //set the count downs for cultural events
 function update_countdown_1(){
@@ -309,3 +323,37 @@ let holiday_dates = document.querySelectorAll(".holiday_date");
 holiday_dates.forEach((item, index) => {
     item.textContent = holiday_linked_events_start_dates[index].toDateString();
 })
+
+
+let cultural_pops = document.querySelector(".cultural_pops");
+cultural_pops.addEventListener("click", test);
+
+function test(e){
+    let step = 0;
+    for(step = 0; step < 21; step++){
+        if(e.target.classList.contains("cultural_pops") && e.target.classList.contains(`${step}`)){
+            console.log("clicked");
+            show_popup(cultural_events_titles[step], cultural_events_dets[step]);
+        }
+    }
+}
+
+const dark_background = document.getElementById("dark_background");
+const pop_holder = document.getElementById("pop_holder");
+const pop_title = document.getElementById("pop_title");
+const pop_content = document.getElementById("pop_content");
+
+dark_background.onclick = function(){
+    hide_popup();
+}
+
+function hide_popup(){
+    pop_holder.style.display = "none";
+    dark_background.style.display = "none";
+}
+function show_popup(title, content){
+    pop_title.textContent = title;
+    pop_content.textContent = content;
+    dark_background.style.display = "block";
+    pop_holder.style.display = "block";
+}
